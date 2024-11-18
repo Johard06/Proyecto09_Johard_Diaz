@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Document</title>
+
+    <style>
+
+        /*Estilos del header*/
+        .titulo{
+        color: white;
+        margin: 0%;
+        font-family: Deltha;
+        font-size: 65px;
+        text-decoration: none;
+        }
+
+        a{
+        text-decoration: none;
+        }
+
+        .cabecera{
+        background-image: url('/imagenes/FondoNegro.jpg');
+        padding: 20px;
+        padding-bottom: 0%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        text-decoration: none;
+        }
+
+        .logo2{
+        height: auto;
+        width: 85px;
+        }
+
+        /*Estilos de contact.hbs y about.hbs*/      
+        .fondo{
+            background-color: #e0e0e0;
+            margin: 0%;
+            padding: 100px;
+            padding-left: 400px;
+            padding-right: 400px;
+        }
+
+        .fondo3{
+            background-color: #e0e0e0;
+            margin: 0%;
+            padding: 100px;
+            padding-left: 300px;
+            padding-right: 300px;
+        }
+
+        .mns3{
+            border: solid #b7b6b6 1px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .mns{
+            border: solid #b7b6b6 1px;
+            border-radius: 15px;
+            background-color: white;
+            padding: 20px;
+            height: auto;
+        }
+
+        #mns1{
+            text-align: center;
+            font-family: Deltha;
+        }
+
+        .mns1{
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .form{
+            display: flex;
+            justify-content: start;
+            flex-direction: column;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        label{
+            margin-top: 10px;
+        }
+
+        input{
+            margin-bottom: 10px;
+            height: 30px;
+            border-radius: 10px;
+            border: solid 1px;
+            padding: 0%;
+            padding-left: 15px;
+        }
+
+        select{
+            margin-bottom: 10px;
+            height: 30px;
+            border-radius: 10px;
+            border: solid 1px;
+            padding: 0%;
+            padding-left: 15px;
+        }
+
+        textarea{
+            margin-bottom: 10px;
+            height: 30px;
+            border-radius: 10px;
+            border: solid 1px;
+            padding: 10px;
+            padding-left: 15px;
+            height: 80px;
+        }
+
+        .mns2{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .boton1{
+            background-color: #4b4b4b;
+            border: none;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+            border-radius: 10px;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            height: 35px;
+            width: auto;
+        }
+
+        /*Estilos del index*/
+        .fondo1{
+            background-color: #e0e0e0;
+            margin: 0%;
+            padding: 100px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .bloque{
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 500px;
+            width: 325px;
+            border-radius: 15px;
+            justify-content: space-around;
+            border: 1px solid #b7b6b6;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .imgndx1{
+            height: 300px;
+            width: auto;
+            padding: 10px;
+        }
+
+        .imgndx3{
+            height: 20px;
+            width: auto;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        /*Estilos del footer*/
+        footer{
+        background-color: #520800;
+        color: white;
+        padding: 10px;
+        display: flex;
+        text-align: center;
+        justify-content: space-around;
+        padding-bottom: 5px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;        
+        font-size: 17px;
+        }
+
+        .info{
+        list-style: none;
+        padding: 0%;
+        margin: 10px;
+        margin-top: 15px;
+        text-decoration: none;
+        }
+
+        .info li{
+        margin: 15px;
+        color:white
+        }
+
+        .logo{
+        width: 35px;
+        height: 35px;
+        margin-right: 5px;
+        margin-left: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    {{!-- LLamar la plantilla del partials --}}
+    {{> header}}
+
+    {{!-- crear un archivo index y el archivo layout automaticamente busca la informacion que quiero mostrar --}}
+    {{{ body }}}
+
+    {{!-- llamar al footer --}}
+    {{> footer}}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
