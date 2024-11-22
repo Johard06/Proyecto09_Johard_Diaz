@@ -4,6 +4,7 @@ const hbs = require('hbs');
 const bodyParser = require('body-parser');
 const path = require('path');
 const morgan = require('morgan');
+const User = require('./models/usuarioModel');
 
 const app = express();//Instancia de express
 
@@ -13,6 +14,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan('dev'));
+
 
 //Error 500, error Intencional
 app.get("/error", (req , res) => {
@@ -45,6 +47,32 @@ app.get("/contact", (req , res) => {
 app.get("/about", (req , res) => {
     res.render("about");
 });
+
+app.get("/registrate", (req , res) => {
+    res.render("registrate");
+});
+
+app.post("/registrate", (req , res) => {
+
+    const { nombre, email, password, edad, provincia, telefono, sucursales, pago} = req.body;
+
+    const persona = {
+        nombre,
+        email,
+        password,
+        edad,
+        provincia,
+        telefono,
+        sucursales,
+        pago
+    }
+    console.log(persona);
+
+    const newUser = new User(persona);
+    newUser.save()
+
+    res.json(persona);
+})
 
 //Error 404
 app.get("/*", (req , res) => {
